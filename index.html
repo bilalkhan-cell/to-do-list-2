@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3B5D46">
+<meta name="description" content="A day-planner style to-do list with a calendar for jumping to any date.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Daybook">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Daybook</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="heart-rain" id="heartRain" aria-hidden="true"></div>
+<div class="stage" id="stage">
+  <div class="tilt-wrap" id="tiltWrap">
+    <div class="stack-page p2" aria-hidden="true"></div>
+    <div class="stack-page p1" aria-hidden="true"></div>
+    <div class="book" id="book">
+      <div class="sheen" aria-hidden="true"></div>
+      <div class="bookmark" aria-hidden="true"></div>
+      <header class="top">
+        <button class="nav-btn" id="prevBtn" aria-label="Previous day">‹</button>
+        <button class="cal-btn" id="calBtn" aria-label="Open calendar">🗓️ <span id="calBtnLabel">Calendar</span></button>
+        <button class="nav-btn" id="nextBtn" aria-label="Next day">›</button>
+      </header>
+
+      <div class="date-block">
+        <p class="month-day" id="monthDay">—</p>
+        <div class="weekday-year" id="weekdayYear">—</div>
+        <span class="today-pill" id="todayPill" style="display:none;">Today</span>
+      </div>
+
+      <div class="jump-today" id="jumpToday" style="display:none;">
+        <button id="jumpTodayBtn">Jump back to today</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <ul class="tasks" id="taskList"></ul>
+
+      <form class="add-row" id="addForm">
+        <input id="taskInput" type="text" placeholder="Add a task for this day…" autocomplete="off" maxlength="140">
+        <button type="submit" aria-label="Add task">+</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="cal-card">
+    <div class="cal-head">
+      <button class="nav-btn" id="calPrevMonth" aria-label="Previous month">‹</button>
+      <div class="label" id="calMonthLabel">Month</div>
+      <button class="nav-btn" id="calNextMonth" aria-label="Next month">›</button>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <button class="cal-close" id="calClose">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
